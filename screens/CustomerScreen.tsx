@@ -9,19 +9,18 @@ import { TabStackParamList } from '../rootNav/TabNavigator';
 import { StackParamList } from '../rootNav/StackNavigator';
 import { Image, Input } from '@rneui/themed';
 import { gql, useQuery } from '@apollo/client';
-import { GET_CUSTOMERS } from '../graphQL/queries'; // Import your query from the appropriate file
+import { GET_CUSTOMERS } from '../graphQL/queries';
 import CustomerCard from '../components/CustomerCard';
+//import consoleOveride from '../consoleOverride/consoleOverride';
 
 export type CustomerScreenNavigationProp = CompositeNavigationProp<
   BottomTabNavigationProp<TabStackParamList, "Customer">,
   NativeStackNavigationProp<StackParamList>
 >;
 
-// Define your GraphQL query outside the component function HIHI
-
 
 const CustomerScreen = () => {
-  const { loading, error, data } = useQuery(GET_CUSTOMERS); // Use the query defined above
+  const { loading, error, data } = useQuery(GET_CUSTOMERS); 
   console.log(data)
 
   const tw = useTailwind();

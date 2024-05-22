@@ -1,0 +1,1 @@
+export const baseUrl = 'https://matane.stepzen.net/api/getting-started/__graphql';

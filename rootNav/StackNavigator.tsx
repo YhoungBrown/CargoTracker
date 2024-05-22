@@ -6,6 +6,8 @@ import utilities from '../tailwind.json';
 import TabNavigator from './TabNavigator';
 import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
 import { GET_CUSTOMERS } from '../graphQL/queries';
+import { ApiKey } from '../env/env';
+import { baseUrl } from '../env/codeDefinition';
 
 
 
@@ -17,17 +19,13 @@ export type StackParamList = {
   Order: {Order : any}
 }
 
-// const client = new ApolloClient({
-//   uri: 'https://dashboard.stepzen.com/explorer?endpoint=api%2Fgetting-started',
-//   cache: new InMemoryCache(),
-// });
+
 
 
 const client = new ApolloClient({
-   uri: 'https://matane.stepzen.net/api/getting-started/__graphql',
-  // uri: 'https://dashboard.stepzen.com/explorer?endpoint=api%2Fgetting-started',
+   uri: baseUrl,
   headers: {
-    Authorization: 'APIKey matane::stepzen.net+1000::18f4a7b5cc10ec75387dc25d68614b9a7691b601c5ffea36229b13f3a1f7b1e6', // Replace 'YOUR_API_KEY_HERE' with your actual API key
+    Authorization: ApiKey, // Replace 'YOUR_API_KEY_HERE' with your actual API key
   },
   cache: new InMemoryCache(),
 });
