@@ -39,7 +39,7 @@ const TabNavigator = () => {
             }
         }
     })}>
-      <Tab.Screen name="Customer" component={CustomerScreen} />
+      <Tab.Screen name="Customer" component={CustomerScreen} options={{headerShown: false}}/>
       <Tab.Screen name="Orders" component={OrdersScreen} />
     </Tab.Navigator>
   )
