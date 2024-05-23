@@ -36,7 +36,7 @@ const ModalScreen: React.FC = () => {
 
   return (
     <View style={[safeAreaTop, { paddingHorizontal: 20 }]}>
-      <TouchableOpacity onPress={() => navigation.goBack()} style={{position:'absolute', top: 35, right:20}}>
+      <TouchableOpacity onPress={() => navigation.goBack()} style={{position:'absolute', top: 35, right:20, zIndex: 50}}>
         <Icon name="closecircle" type="antdesign" />
       </TouchableOpacity>
 
