@@ -8,6 +8,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client
 import { GET_CUSTOMERS } from '../graphQL/queries';
 import { ApiKey } from '../env/env';
 import { baseUrl } from '../env/codeDefinition';
+import ModalScreen from '../screens/ModalScreen';
 
 
 
@@ -18,7 +19,6 @@ export type StackParamList = {
   MyModal: {userId: string; name: string},
   Order: {Order : any}
 }
-
 
 
 
@@ -37,7 +37,7 @@ const client = new ApolloClient({
 
 
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<StackParamList>();
 
 const StackNavigator = () => {
   return (
@@ -49,6 +49,10 @@ const StackNavigator = () => {
           <Stack.Navigator>
             <Stack.Group>
               <Stack.Screen name='Main' component={TabNavigator} options={{headerShown: false}}/>
+            </Stack.Group>
+
+            <Stack.Group screenOptions={{presentation: 'modal'}}>
+              <Stack.Screen name='MyModal' component={ModalScreen} options={{headerShown: false}}/>
             </Stack.Group>
           </Stack.Navigator>
         </NavigationContainer>

@@ -8,17 +8,17 @@ type CustomerList = {
     value: Customer;
 };
 
-type Order  = {
-  carrier: String
-  createdAt: Date
-  shippingCost: Int
-  trackingId: String
-  Address: String
-  City: String
-  lat: Float
-  long: Float
-  trackingItems: TrackingItems
-}
+type Order = {
+  carrier: string;
+  createdAt: Date;
+  shippingCost: number;
+  trackingId: string;
+  Address: string;
+  City: string;
+  lat: number;
+  long: number;
+  trackingItems: TrackingItems;
+};
 
 type OrderResponse = {
     value: Order;

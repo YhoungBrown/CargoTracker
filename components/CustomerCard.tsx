@@ -1,27 +1,50 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import useCustomerOrders from '../hooks/useCustomerOrders'
-import { useTailwind } from 'tailwind-rn'
-import { useNavigation } from '@react-navigation/native'
-import { CustomerScreenNavigationProp } from '../screens/CustomerScreen'
+import React from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
+import { useTailwind } from 'tailwind-rn';
+import { useNavigation } from '@react-navigation/native';
+import { CustomerScreenNavigationProp } from '../screens/CustomerScreen';
+import { Card, Icon } from '@rneui/themed';
+import useCustomerOrders from '../hooks/useCustomerOrders';
 
-type props = {
-    userId: String,
-    name: String,
-    email: String,
-}
+type Props = {
+  userId: string;
+  name: string;
+  email: string;
+};
 
-const CustomerCard = (props: props) => {
-    const {userId, name, email} = props
-    const {loading, error, orders } = useCustomerOrders(userId)
-    const tw = useTailwind();
+const CustomerCard = (props:Props) => {
+  const { userId, name, email } = props
+  const { loading, error, orders } = useCustomerOrders(userId);
+  const tw = useTailwind();
+  const navigation = useNavigation<CustomerScreenNavigationProp>();
 
-    const navigation = useNavigation<CustomerScreenNavigationProp>();
   return (
-    <View>
-      <Text>CustomerCard</Text>
-    </View>
-  )
-}
+    <TouchableOpacity onPress={() => navigation.navigate('MyModal', { name, userId })}>
+      <Card containerStyle={{ borderRadius: 8, padding: 20 }}>
+        <View>
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+            <View>
+              <Text style={{ fontWeight: 'bold', fontSize: 24, lineHeight: 32 }}>{name}</Text>
+              <Text style={{ fontSize: 14, color: "#59C1CC" }}>ID: {userId}</Text>
+            </View>
 
-export default CustomerCard
+            <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end' }}>
+              <Text style={{ color: "#59C1CC" }}>{loading ? "loading..." : `${orders.length}x`}</Text>
+              <Icon
+                style={{ marginLeft: 'auto', marginBottom: 20 }}
+                name='box'
+                type='entypo'
+                color={"#59C1CC"}
+                size={50}
+              />
+            </View>
+          </View>
+        </View>
+        <Card.Divider />
+        <Text>{email}</Text>
+      </Card>
+    </TouchableOpacity>
+  );
+};
+
+export default CustomerCard;
