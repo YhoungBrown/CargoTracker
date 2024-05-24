@@ -1,15 +1,17 @@
 {
   "expo": {
-    "name": "CargoTracker",
-    "slug": "CargoTracker",
+    "name": "cargotracker",
+    "slug": "cargotracker",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
       "**/*"
@@ -18,13 +20,20 @@
       "supportsTablet": true
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+      "package": "com.expo.cargotracker",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyDAPBsohk7YAzNJt7R2w3wcNLeSYtXJs5I"
+        }
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "bca73890-ee7f-4be3-a299-c8f875826a95"
+      }
     }
   }
 }

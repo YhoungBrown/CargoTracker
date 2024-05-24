@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import { Card, Icon } from '@rneui/themed'
-import MapView, {Marker} from 'react-native-maps';
+import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 
  type prop = {
   order: Order
@@ -67,6 +67,7 @@ const DeliveryCard = ({order}: prop) => {
     </View>
 
     <MapView 
+      provider={PROVIDER_GOOGLE}
       initialRegion={{
         latitude: order.lat,
         longitude: order.long,
@@ -77,9 +78,9 @@ const DeliveryCard = ({order}: prop) => {
         width: "100%",
         height: 200
       }}
-    >
+    />
 
-    </MapView>
+    
     </Card>
   )
 }
