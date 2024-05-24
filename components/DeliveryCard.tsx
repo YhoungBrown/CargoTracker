@@ -1,6 +1,7 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import { Card, Icon } from '@rneui/themed'
+import MapView, {Marker} from 'react-native-maps';
 
  type prop = {
   order: Order
@@ -51,8 +52,8 @@ const DeliveryCard = ({order}: prop) => {
 
     <View style={{padding: 20}}>
 
-      {order.trackingItems.items.map(item => (
-        <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
+      {order.trackingItems.items.map((item, index) => (
+        <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}} key={index}>
           
             <Text style={{fontSize: 14, lineHeight: 20, textAlign: 'center', color: "white", fontStyle: 'italic'}}>
               {item.name}
@@ -64,6 +65,21 @@ const DeliveryCard = ({order}: prop) => {
         </View>
       ))}
     </View>
+
+    <MapView 
+      initialRegion={{
+        latitude: order.lat,
+        longitude: order.long,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005
+      }}
+      style={{
+        width: "100%",
+        height: 200
+      }}
+    >
+
+    </MapView>
     </Card>
   )
 }
