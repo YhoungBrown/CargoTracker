@@ -23,8 +23,12 @@
       "package": "com.expo.cargotracker",
       "config": {
         "googleMaps": {
-          "apiKey": "AIzaSyDAPBsohk7YAzNJt7R2w3wcNLeSYtXJs5I"
-        }
+          "apiKey": "AIzaSyBlbMiCLp-YvL_GgAvnZFweqOzzpUmEWqQ"
+        },
+        "permissions": [
+          "ACCESS_FINE_LOCATION",
+          "ACCESS_COARSE_LOCATION"
+        ]
       }
     },
     "web": {

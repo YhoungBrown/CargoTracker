@@ -11,7 +11,6 @@ import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 import { TabStackParamList } from '../rootNav/TabNavigator';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { StackParamList } from '../rootNav/StackNavigator';
-//import { CustomerScreenNavigationProp } from './CustomerScreen';
 
 
 

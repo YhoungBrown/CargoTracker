@@ -1,13 +1,14 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import { Card, Icon } from '@rneui/themed'
-import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 
  type prop = {
   order: Order
  }
 
 const DeliveryCard = ({order}: prop) => {
+  console.log("long", order.long )
   return (
     <Card containerStyle={{
       borderRadius: 8, 
@@ -66,8 +67,8 @@ const DeliveryCard = ({order}: prop) => {
       ))}
     </View>
 
-    <MapView 
-      provider={PROVIDER_GOOGLE}
+    {/* <MapView 
+      //provider={PROVIDER_GOOGLE}
       initialRegion={{
         latitude: order.lat,
         longitude: order.long,
@@ -78,9 +79,21 @@ const DeliveryCard = ({order}: prop) => {
         width: "100%",
         height: 200
       }}
-    />
+    /> */}
 
-    
+<MapView 
+      provider={PROVIDER_GOOGLE}
+      initialRegion={{
+        latitude: 53.463493,
+        longitude: -2.292279,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005
+      }}
+      style={{
+        width: "100%",
+        height: 200
+      }}
+    />
     </Card>
   )
 }
