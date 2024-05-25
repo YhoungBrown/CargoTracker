@@ -15,8 +15,8 @@ type Order = {
   trackingId: string;
   Address: string;
   City: string;
-  lat: number;
-  long: number;
+  Lat: number;
+  Lng: number;
   trackingItems: TrackingItems;
 };
 

@@ -24,8 +24,8 @@ export const GET_ORDERS = gql`
       City
       carrier
       createdAt
-      lat
-      long
+      Lat
+      Lng
       shippingCost
       trackingId
       trackingItems {

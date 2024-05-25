@@ -5,8 +5,8 @@ type Order {
   trackingId: String
   Address: String
   City: String
-  lat: Float
-  long: Float
+  Lat: Float
+  Lng: Float
   trackingItems: TrackingItems
     @materializer(
       query: "getTrackingItemById"
