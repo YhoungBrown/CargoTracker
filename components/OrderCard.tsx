@@ -1,11 +1,11 @@
-import { View, Text, TouchableOpacity } from 'react-native'
-import React from 'react'
-import { Card, Icon } from '@rneui/themed'
-import { CompositeNavigationProp, useNavigation } from '@react-navigation/native';
 import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
-import { TabStackParamList } from '../rootNav/TabNavigator';
+import { CompositeNavigationProp, useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { Card, Icon } from '@rneui/themed';
+import React from 'react';
+import { Text, TouchableOpacity, View } from 'react-native';
 import { StackParamList } from '../rootNav/StackNavigator';
+import { TabStackParamList } from '../rootNav/TabNavigator';
 
 export type SingleOrderScreenNavigationProp = CompositeNavigationProp<
   BottomTabNavigationProp<TabStackParamList>,

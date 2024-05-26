@@ -1,15 +1,14 @@
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SafeAreaProvider, initialWindowMetrics } from 'react-native-safe-area-context';
 import { TailwindProvider } from 'tailwind-rn';
-import utilities from '../tailwind.json';
-import TabNavigator from './TabNavigator';
-import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
-import { GET_CUSTOMERS } from '../graphQL/queries';
-import { ApiKey } from '../env/env';
 import { baseUrl } from '../env/codeDefinition';
+import { ApiKey } from '../env/env';
 import ModalScreen from '../screens/ModalScreen';
 import SingleOrderScreen from '../screens/SingleOrderScreen';
+import utilities from '../tailwind.json';
+import TabNavigator from './TabNavigator';
 
 
 
@@ -26,7 +25,7 @@ export type StackParamList = {
 const client = new ApolloClient({
    uri: baseUrl,
   headers: {
-    Authorization: ApiKey, // Replace 'YOUR_API_KEY_HERE' with your actual API key
+    Authorization: ApiKey, 
   },
   cache: new InMemoryCache(),
 });

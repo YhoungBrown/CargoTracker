@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import { View, ScrollView, ActivityIndicator } from 'react-native';
-import { useTailwind } from 'tailwind-rn';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { CompositeNavigationProp, useNavigation } from '@react-navigation/native';
-import { Image, Input } from '@rneui/themed';
 import { useQuery } from '@apollo/client';
-import { GET_CUSTOMERS } from '../graphQL/queries';
-import CustomerCard from '../components/CustomerCard';
 import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
-import { TabStackParamList } from '../rootNav/TabNavigator';
+import { CompositeNavigationProp, useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { Image, Input } from '@rneui/themed';
+import React, { useState } from 'react';
+import { ActivityIndicator, ScrollView, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useTailwind } from 'tailwind-rn';
+import CustomerCard from '../components/CustomerCard';
+import { GET_CUSTOMERS } from '../graphQL/queries';
 import { StackParamList } from '../rootNav/StackNavigator';
+import { TabStackParamList } from '../rootNav/TabNavigator';
 
 
 

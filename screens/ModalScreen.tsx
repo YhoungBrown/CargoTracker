@@ -1,14 +1,14 @@
-import React from 'react';
-import { View, Text, TouchableOpacity, FlatList, ActivityIndicator } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Icon } from '@rneui/themed';
-import { CompositeNavigationProp, RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
+import { CompositeNavigationProp, RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { TabStackParamList } from '../rootNav/TabNavigator';
-import { StackParamList } from '../rootNav/StackNavigator';
-import { CustomerScreenNavigationProp } from './CustomerScreen';
+import { Icon } from '@rneui/themed';
+import React from 'react';
+import { ActivityIndicator, FlatList, Text, TouchableOpacity, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import useCustomerOrders from '../hooks/useCustomerOrders';
+import { StackParamList } from '../rootNav/StackNavigator';
+import { TabStackParamList } from '../rootNav/TabNavigator';
+import { CustomerScreenNavigationProp } from './CustomerScreen';
 //import { Order } from "../"; // Adjust the import path accordingly
 import DeliveryCard from '../components/DeliveryCard'; // Adjust the import path accordingly
 

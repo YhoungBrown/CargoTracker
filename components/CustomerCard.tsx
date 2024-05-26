@@ -1,10 +1,10 @@
-import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import { useTailwind } from 'tailwind-rn';
 import { useNavigation } from '@react-navigation/native';
-import { CustomerScreenNavigationProp } from '../screens/CustomerScreen';
 import { Card, Icon } from '@rneui/themed';
+import React from 'react';
+import { Text, TouchableOpacity, View } from 'react-native';
+import { useTailwind } from 'tailwind-rn';
 import useCustomerOrders from '../hooks/useCustomerOrders';
+import { CustomerScreenNavigationProp } from '../screens/CustomerScreen';
 
 type Props = {
   userId: string;

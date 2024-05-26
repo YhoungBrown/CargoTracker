@@ -1,14 +1,14 @@
-import { View, Text, ScrollView, ActivityIndicator } from 'react-native'
-import React, { useLayoutEffect, useState } from 'react'
-import { CompositeNavigationProp, RouteProp, useNavigation } from '@react-navigation/native';
 import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
-import { TabStackParamList } from '../rootNav/TabNavigator';
+import { CompositeNavigationProp, useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { StackParamList } from '../rootNav/StackNavigator';
-import useOrders from '../hooks/useOrders';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Button, Image } from '@rneui/themed';
+import React, { useLayoutEffect, useState } from 'react';
+import { ActivityIndicator, ScrollView, Text, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import OrderCard from '../components/OrderCard';
+import useOrders from '../hooks/useOrders';
+import { StackParamList } from '../rootNav/StackNavigator';
+import { TabStackParamList } from '../rootNav/TabNavigator';
 
 
 //type OrderScreenRouteProp = RouteProp<TabStackParamList, 'Orders'>;

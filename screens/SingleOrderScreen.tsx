@@ -1,11 +1,11 @@
-import { View, Text } from 'react-native';
-import React, { useLayoutEffect } from 'react';
-import { CompositeNavigationProp, useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
+import { CompositeNavigationProp, RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { TabStackParamList } from '../rootNav/TabNavigator';
-import { StackParamList } from '../rootNav/StackNavigator';
+import React, { useLayoutEffect } from 'react';
+import { View } from 'react-native';
 import DeliveryCard from '../components/DeliveryCard';
+import { StackParamList } from '../rootNav/StackNavigator';
+import { TabStackParamList } from '../rootNav/TabNavigator';
 
 
 export type SingleOrderScreenNavigationProp = CompositeNavigationProp<

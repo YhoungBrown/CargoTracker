@@ -1,7 +1,7 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import { Card, Icon } from '@rneui/themed'
-import MapView, {Marker, PROVIDER_GOOGLE } from 'react-native-maps';
+import { Card, Icon } from '@rneui/themed';
+import React from 'react';
+import { Text, View } from 'react-native';
+import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 
  type prop = {
   order: Order;
