@@ -9,6 +9,7 @@ import { GET_CUSTOMERS } from '../graphQL/queries';
 import { ApiKey } from '../env/env';
 import { baseUrl } from '../env/codeDefinition';
 import ModalScreen from '../screens/ModalScreen';
+import SingleOrderScreen from '../screens/SingleOrderScreen';
 
 
 
@@ -17,7 +18,7 @@ import ModalScreen from '../screens/ModalScreen';
 export type StackParamList = {
   Main : undefined,
   MyModal: {userId: string; name: string},
-  Order: {Order : any}
+  SingleOrder: {Order : Order}
 }
 
 
@@ -53,6 +54,10 @@ const StackNavigator = () => {
 
             <Stack.Group screenOptions={{presentation: 'modal'}}>
               <Stack.Screen name='MyModal' component={ModalScreen} options={{headerShown: false}}/>
+            </Stack.Group>
+
+            <Stack.Group screenOptions={{presentation: 'modal'}}>
+              <Stack.Screen name='SingleOrder' component={SingleOrderScreen} />
             </Stack.Group>
           </Stack.Navigator>
         </NavigationContainer>

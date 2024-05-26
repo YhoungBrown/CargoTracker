@@ -4,40 +4,46 @@ import { Card, Icon } from '@rneui/themed'
 import MapView, {Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 
  type prop = {
-  order: Order
+  order: Order;
+  fullwidth?: boolean;
  }
 
-const DeliveryCard = ({order}: prop) => {
+const DeliveryCard = ({order, fullwidth}: prop) => {
   console.log("lat", order);
   return (
-    <Card containerStyle={{
-      borderRadius: 8, 
-      marginVertical: 8, 
-      backgroundColor: "#59C1CC", 
+    <Card containerStyle={[
+      fullwidth ? {borderRadius: 0, 
+        margin: 0} : {borderRadius: 8, 
+          marginVertical: 8, marginHorizontal: 0},
+      {
+      backgroundColor: fullwidth ? "#EB6A7C" : "#59C1CC", 
       padding:0, 
       paddingTop: 16, 
       shadowColor: "black", 
       shadowOffset: {width: 0, height: 2}, 
       shadowOpacity: 0.2, 
-      shadowRadius: 4}}>
+      shadowRadius: 4}]}>
       <View>
         <Icon name='box' type='entypo' color={"white"} size={50}/>
 
         <View style={{alignItems: "center", justifyContent: 'center'}}>
-          <Text style={{
-            fontSize: 14, 
-            lineHeight: 20, 
-            textTransform: 'uppercase', 
-            color: "white", 
-            fontWeight: 'bold'}}>
-              {order.carrier} - {order.trackingId}
-          </Text>
+          <View>
+            <Text style={{
+              fontSize: 14, 
+              lineHeight: 20, 
+              textTransform: 'uppercase', 
+              color: "white", 
+              fontWeight: 'bold'}}>
+                {order.carrier} - {order.trackingId}
+            </Text>
 
-          <Text style={{color: "white", fontSize: 18, lineHeight: 20, fontWeight:'bold'}}> 
-            Expected Delivery: {new Date(order.createdAt).toLocaleDateString()}
-          </Text>
+            <Text style={{color: "white", fontSize: 18, lineHeight: 20,   fontWeight:'bold'}}> 
+              Expected Delivery: {new Date(order.createdAt).  toLocaleDateString()}
+            </Text>
+            
+            <View style={{backgroundColor: "white", height: 0.5, width: "100%", marginVertical: 10}}/>
+          </View>
 
-          <View style={{backgroundColor: "white", height: 0.5, width: "100%", marginVertical: 10}}/>
 
           <View>
             <Text style={{textAlign: 'center', color: "white", fontWeight: 'bold', marginTop: 5 , fontSize: 15, lineHeight: 24}}>
@@ -53,8 +59,8 @@ const DeliveryCard = ({order}: prop) => {
 
     <View style={{padding: 20}}>
 
-      {order.trackingItems.items.map((item, index) => (
-        <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}} key={index}>
+      {order.trackingItems.items.map((item) => (
+        <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}} key={item.item_id}>
           
             <Text style={{fontSize: 14, lineHeight: 20, textAlign: 'center', color: "white", fontStyle: 'italic'}}>
               {item.name}
@@ -77,7 +83,8 @@ const DeliveryCard = ({order}: prop) => {
       }}
       style={{
         width: "100%",
-        height: 200
+        //flexGrow: 1,
+        ...(fullwidth ? {height: "100%"} : {height: 200})
       }}
     >
       {order.Lat && order.Lng && (
